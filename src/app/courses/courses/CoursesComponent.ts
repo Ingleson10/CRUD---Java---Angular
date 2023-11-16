@@ -15,14 +15,12 @@ export class CoursesComponent {
   displayedColumns = ['name', 'category'];
 
   //coursesService: CoursesService;
-
   constructor(
     private coursesService: CoursesService,
     public dialog: MatDialog
   ) {
     //this.courses = [];
     //this.coursesService = new CoursesService();
-
     this.courses$ = this.coursesService.list().pipe(
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       catchError((error) => {
